@@ -216,46 +216,57 @@ if (langBtn) {
 }
 
 /* ============================================================
-   🎯 تأثير الدايرة على العنوان (ماوس + لمس)
+   🎯 تأثير الدايرة على العنوان (ماوس + لمس) — متزامن 100%
    ============================================================ */
 const heroTitle = document.getElementById('heroTitle');
 if (heroTitle) {
 
-  // 🖱️ دالة تحديث موقع الدايرة
-  function updateCircle(x, y) {
+  let hideTimer = null;
+
+  // 📍 تحديد مكان الدايرة (بيتغير فورًا بدون transition)
+  function setCircle(x, y) {
     const rect = heroTitle.getBoundingClientRect();
     heroTitle.style.setProperty('--mouse-x', (x - rect.left) + 'px');
     heroTitle.style.setProperty('--mouse-y', (y - rect.top) + 'px');
   }
 
-  // 🖱️ ماوس (كمبيوتر)
-  heroTitle.addEventListener('mousemove', (e) => {
-    updateCircle(e.clientX, e.clientY);
-  });
-  heroTitle.addEventListener('mouseenter', () => heroTitle.classList.add('hovering'));
-  heroTitle.addEventListener('mouseleave', () => {
-    heroTitle.classList.remove('hovering');
-    heroTitle.style.setProperty('--mouse-x', '-500px');
-    heroTitle.style.setProperty('--mouse-y', '-500px');
-  });
+  // ✨ إظهار — المكان الأول، وبعدين الكلاس في نفس الـ frame
+  function showCircle(x, y) {
+    clearTimeout(hideTimer);
+    setCircle(x, y);
+    requestAnimationFrame(() => heroTitle.classList.add('hovering'));
+  }
 
-  // 📱 لمس (موبايل)
-  heroTitle.addEventListener('touchstart', (e) => {
-    heroTitle.classList.add('hovering');
-    const touch = e.touches[0];
-    updateCircle(touch.clientX, touch.clientY);
+  // 🫥 إخفاء مع مهلة
+  function hideCircle(delay = 0) {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      heroTitle.classList.remove('hovering');
+      setTimeout(() => {
+        heroTitle.style.setProperty('--mouse-x', '-500px');
+        heroTitle.style.setProperty('--mouse-y', '-500px');
+      }, 200);
+    }, delay);
+  }
+
+  /* 🖱️ ماوس (كمبيوتر) */
+  heroTitle.addEventListener('mouseenter', e => showCircle(e.clientX, e.clientY));
+  heroTitle.addEventListener('mousemove',  e => setCircle(e.clientX, e.clientY));
+  heroTitle.addEventListener('mouseleave', () => hideCircle(0));
+
+  /* 📱 لمس (موبايل) */
+  heroTitle.addEventListener('touchstart', e => {
+    const t = e.touches[0];
+    showCircle(t.clientX, t.clientY);
   }, { passive: true });
 
-  heroTitle.addEventListener('touchmove', (e) => {
-    const touch = e.touches[0];
-    updateCircle(touch.clientX, touch.clientY);
+  heroTitle.addEventListener('touchmove', e => {
+    const t = e.touches[0];
+    setCircle(t.clientX, t.clientY);
   }, { passive: true });
 
-  heroTitle.addEventListener('touchend', () => {
-    heroTitle.classList.remove('hovering');
-    heroTitle.style.setProperty('--mouse-x', '-500px');
-    heroTitle.style.setProperty('--mouse-y', '-500px');
-  });
+  heroTitle.addEventListener('touchend',    () => hideCircle(500), { passive: true });
+  heroTitle.addEventListener('touchcancel', () => hideCircle(0),   { passive: true });
 }
 
 /* ============ الإشعار الداخلي ============ */
