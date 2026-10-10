@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEMORA | عالم الأحجار الكريمة</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar" data-ar="توصيل مجاني للطلبات فوق 500 جنيه | خصم 10% على أول طلب" data-en="Free shipping on orders over 500 EGP | 10% off your first order">توصيل مجاني للطلبات فوق 500 جنيه | خصم 10% على أول طلب</div>
+
+<header>
+  <div class="nav-wrap">
+    <div class="logo">
+      <div class="logo-main">
+        <div class="logo-icon">G</div>
+        <div class="logo-name">GEMORA</div>
+      </div>
+      <span class="logo-tagline" data-ar="عالم الأحجار الكريمة" data-en="The World of Gemstones">عالم الأحجار الكريمة</span>
+    </div>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <nav id="mainNav">
+      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="#products" data-ar="المتجر" data-en="Shop">المتجر</a>
+      <a href="#story" data-ar="عننا" data-en="About">عننا</a>
+      <a href="#testimonials" data-ar="آراء العملاء" data-en="Reviews">آراء العملاء</a>
+      <a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+    </nav>
+    <button class="user-avatar" id="userAvatar" title="حسابي">
+      <div class="avatar-circle">
+        <img id="avatarImg" style="display:none" alt="">
+        <span id="avatarFallback">👤</span>
+      </div>
+      <span class="avatar-name" id="avatarName">حسابي</span>
+    </button>
+    <button class="lang-btn" id="langBtn">EN</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1 class="hero-title" id="heroTitle">
+      <span class="title-layer title-base"
+            data-ar="اكتشف جمال الأحجار الكريمة"
+            data-en="Discover the Beauty of Gemstones">
+        اكتشف جمال الأحجار الكريمة
+      </span>
+      <span class="title-layer title-reveal" aria-hidden="true"
+            data-ar="اكتشف جمال الأحجار الكريمة"
+            data-en="Discover the Beauty of Gemstones">
+        اكتشف جمال الأحجار الكريمة
+      </span>
+    </h1>
+    <p data-ar="في GEMORA نقدم لك أجمل الأحجار الكريمة الطبيعية بأسعار تنافسية. كل حجر له قصة، وكل قطعة فريدة من نوعها."
+       data-en="At GEMORA, we offer you the finest natural gemstones at competitive prices.">
+      في GEMORA نقدم لك أجمل الأحجار الكريمة الطبيعية بأسعار تنافسية. كل حجر له قصة، وكل قطعة فريدة من نوعها.
+    </p>
+    <a href="#products" class="btn" data-ar="تسوق الآن" data-en="Shop Now">تسوق الآن</a>
+  </div>
+  <div class="hero-image">
+    <img src="https://i.postimg.cc/gjctfcYH/photo-2026-10-10-01-02-39.jpg" alt="">
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="section-title">
+    <h2 data-ar="أحدث المنتجات" data-en="Latest Products">أحدث المنتجات</h2>
+    <p data-ar="اختيارات مميزة من الأحجار الكريمة" data-en="Handpicked gemstone selections">اختيارات مميزة من الأحجار الكريمة</p>
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-img"><img src="https://i.postimg.cc/3Jz5Dp8P/photo-2026-10-10-01-19-39.jpg" alt=""></div>
+      <h3 data-ar="ياقوت أحمر" data-en="Red Ruby">ياقوت أحمر</h3>
+      <div class="price" data-ar="1,200 ج.م" data-en="1,200 EGP">1,200 ج.م</div>
+      <button class="btn-small" data-ar="أضف للسلة" data-en="Add to Cart"
+              data-id="ruby" data-name-ar="ياقوت أحمر" data-name-en="Red Ruby"
+              data-price="1200" data-img="https://i.postimg.cc/3Jz5Dp8P/photo-2026-10-10-01-19-39.jpg">أضف للسلة</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><img src="https://i.postimg.cc/dQBVd5pS/photo-2026-10-10-01-19-44.jpg" alt=""></div>
+      <h3 data-ar="زمرد أخضر" data-en="Green Emerald">زمرد أخضر</h3>
+      <div class="price" data-ar="1,800 ج.م" data-en="1,800 EGP">1,800 ج.م</div>
+      <button class="btn-small" data-ar="أضف للسلة" data-en="Add to Cart"
+              data-id="emerald" data-name-ar="زمرد أخضر" data-name-en="Green Emerald"
+              data-price="1800" data-img="https://i.postimg.cc/dQBVd5pS/photo-2026-10-10-01-19-44.jpg">أضف للسلة</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><img src="https://i.postimg.cc/VvSZYGCQ/photo-2026-10-10-01-19-26.jpg" alt=""></div>
+      <h3 data-ar="أميثيست بنفسجي" data-en="Purple Amethyst">أميثيست بنفسجي</h3>
+      <div class="price" data-ar="900 ج.م" data-en="900 EGP">900 ج.م</div>
+      <button class="btn-small" data-ar="أضف للسلة" data-en="Add to Cart"
+              data-id="amethyst" data-name-ar="أميثيست بنفسجي" data-name-en="Purple Amethyst"
+              data-price="900" data-img="https://i.postimg.cc/VvSZYGCQ/photo-2026-10-10-01-19-26.jpg">أضف للسلة</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><img src="https://i.postimg.cc/vHgCMBrv/photo-2026-10-10-01-19-33.jpg" alt=""></div>
+      <h3 data-ar="حجر القمر" data-en="Moonstone">حجر القمر</h3>
+      <div class="price" data-ar="1,100 ج.م" data-en="1,100 EGP">1,100 ج.م</div>
+      <button class="btn-small" data-ar="أضف للسلة" data-en="Add to Cart"
+              data-id="moonstone" data-name-ar="حجر القمر" data-name-en="Moonstone"
+              data-price="1100" data-img="https://i.postimg.cc/vHgCMBrv/photo-2026-10-10-01-19-33.jpg">أضف للسلة</button>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="story-wrap">
+    <div class="story-text">
+      <h2 data-ar="قصتنا" data-en="Our Story">قصتنا</h2>
+      <p data-ar="بدأت GEMORA من شغفنا بالأحجار الكريمة وجمالها الفريد. نؤمن أن كل حجر يحمل طاقة وقصة خاصة."
+         data-en="GEMORA began from our passion for gemstones.">
+        بدأت GEMORA من شغفنا بالأحجار الكريمة وجمالها الفريد. نؤمن أن كل حجر يحمل طاقة وقصة خاصة.
+      </p>
+      <p data-ar="نعمل على اختيار أجود الأحجار من مختلف أنحاء العالم، ونقدمها لك بأسعار مناسبة."
+         data-en="We carefully select the finest stones from around the world.">
+        نعمل على اختيار أجود الأحجار من مختلف أنحاء العالم، ونقدمها لك بأسعار مناسبة مع ضمان الأصالة والجودة.
+      </p>
+      <p data-ar="هدفنا أن نشاركك لحظاتك المميزة بحجر يعبر عنك." data-en="Our goal is to share your special moments.">
+        هدفنا أن نشاركك لحظاتك المميزة بحجر يعبر عنك.
+      </p>
+    </div>
+    <div class="story-image">
+      <img src="https://i.postimg.cc/Kz531xt0/photo-2026-10-10-01-40-34.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="section-title">
+    <h2 data-ar="آراء عملائنا" data-en="Customer Reviews">آراء عملائنا</h2>
+    <p data-ar="ماذا قالوا عن GEMORA" data-en="What they said about GEMORA">ماذا قالوا عن GEMORA</p>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <p data-ar="جودة رائعة وتغليف أنيق، تجربة شراء ممتازة." data-en="Amazing quality and elegant packaging.">"جودة رائعة وتغليف أنيق، تجربة شراء ممتازة."</p>
+      <div class="author" data-ar="— سارة أحمد" data-en="— Sara Ahmed">— سارة أحمد</div>
+    </div>
+    <div class="testimonial-card">
+      <p data-ar="أحجار أصلية وأسعار مناسبة، أنصح الجميع بالتجربة." data-en="Authentic stones and reasonable prices.">"أحجار أصلية وأسعار مناسبة، أنصح الجميع بالتجربة."</p>
+      <div class="author" data-ar="— محمد علي" data-en="— Mohamed Ali">— محمد علي</div>
+    </div>
+    <div class="testimonial-card">
+      <p data-ar="فريق خدمة العملاء متعاون جداً، شكراً GEMORA." data-en="The customer service team is very helpful.">"فريق خدمة العملاء متعاون جداً، شكراً GEMORA."</p>
+      <div class="author" data-ar="— نورهان حسن" data-en="— Nourhan Hassan">— نورهان حسن</div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter" id="contact">
+  <h2 data-ar="اشترك في نشرتنا البريدية" data-en="Subscribe to Our Newsletter">اشترك في نشرتنا البريدية</h2>
+  <p data-ar="كن أول من يعرف عن العروض والمنتجات الجديدة" data-en="Be the first to know about new offers">كن أول من يعرف عن العروض والمنتجات الجديدة</p>
+  <form id="newsletterForm">
+    <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+    <button type="submit" data-ar="اشترك" data-en="Subscribe">اشترك</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-col">
+      <h4>GEMORA</h4>
+      <p style="font-size:13px;color:var(--coffee);" data-ar="عالم الأحجار الكريمة — جودة وأصالة منذ 2020" data-en="The World of Gemstones">عالم الأحجار الكريمة<br>جودة وأصالة منذ 2020</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="#products" data-ar="المتجر" data-en="Shop">المتجر</a>
+      <a href="#story" data-ar="عننا" data-en="About">عننا</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-ar="خدمة العملاء" data-en="Customer Service">خدمة العملاء</h4>
+      <a href="#" data-ar="سياسة الاستبدال" data-en="Return Policy">سياسة الاستبدال</a>
+      <a href="#" data-ar="الشحن والتوصيل" data-en="Shipping">الشحن والتوصيل</a>
+      <a href="#" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</a>
+    </div>
+    <div class="footer-col">
+      <h4 data-ar="تابعنا" data-en="Follow Us">تابعنا</h4>
+      <a href="#" data-ar="فيسبوك" data-en="Facebook">فيسبوك</a>
+      <a href="#" data-ar="انستجرام" data-en="Instagram">انستجرام</a>
+      <a href="#" data-ar="تيك توك" data-en="TikTok">تيك توك</a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-ar="© 2026 GEMORA. جميع الحقوق محفوظة." data-en="© 2026 GEMORA.">© 2026 GEMORA. جميع الحقوق محفوظة.</div>
+</footer>
+
+<!-- 🛒 أيقونة السلة -->
+<button class="cart-btn" id="cartBtn" title="سلة المشتريات">
+  🛒
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<!-- 🛒 Modal السلة -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-content">
+    <button class="cart-close" id="cartClose">✕</button>
+    <div class="cart-header">
+      <div class="cart-header-icon">🛒</div>
+      <h2 data-ar="سلة المشتريات" data-en="Shopping Cart">سلة المشتريات</h2>
+      <p id="cartSubtitle">لديك 0 منتج</p>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-total" id="cartTotalBox">
+      <div class="cart-total-row">
+        <span data-ar="الإجمالي:" data-en="Total:">الإجمالي:</span>
+        <span class="cart-total-price" id="cartTotal">0 ج.م</span>
+      </div>
+      <button class="cart-checkout" id="cartCheckout" data-ar="إتمام الشراء" data-en="Checkout">إتمام الشراء</button>
+    </div>
+  </div>
+</div>
+
+<!-- 👤 Modal الحساب -->
+<div class="account-modal" id="accountModal">
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-header">
+      <h2 data-ar="حسابي" data-en="My Account">حسابي</h2>
+      <p data-ar="سجّل بياناتك واختر طريقة الدفع" data-en="Fill your info and choose payment">سجّل بياناتك واختر طريقة الدفع</p>
+    </div>
+    <div class="modal-success" id="modalSuccess">✅ تم حفظ بياناتك بنجاح!</div>
+    <form id="accountForm">
+      <div class="avatar-upload">
+        <label for="avatarInput" class="avatar-preview" id="avatarPreview">
+          <span class="avatar-placeholder" id="avatarPlaceholder">📷</span>
+          <img id="avatarImage" alt="">
+        </label>
+        <input type="file" id="avatarInput" accept="image/*" hidden>
+        <p class="avatar-hint" data-ar="اضغط على الدايرة لاختيار صورة" data-en="Click to choose a photo">اضغط على الدايرة لاختيار صورة</p>
+      </div>
+      <div class="modal-form-group">
+        <label for="nameInput" data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+        <input type="text" id="nameInput" placeholder="مثال: فاطمة محمد" required>
+      </div>
+      <div class="modal-form-group">
+        <label for="emailInput" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+        <input type="email" id="emailInput" placeholder="example@email.com" required>
+      </div>
+      <div class="payment-section">
+        <label class="payment-title" data-ar="💳 اختر طريقة الدفع" data-en="💳 Choose Payment Method">💳 اختر طريقة الدفع</label>
+        <div class="payment-methods">
+          <label class="payment-option">
+            <input type="radio" name="payment" value="cash" checked>
+            <div class="payment-card">
+              <div class="payment-icon">💵</div>
+              <div class="payment-info">
+                <span class="payment-name" data-ar="الدفع عند الاستلام" data-en="Cash on Delivery">الدفع عند الاستلام</span>
+                <span class="payment-desc" data-ar="ادفع كاش عند وصول الطلب" data-en="Pay cash on delivery">ادفع كاش عند وصول الطلب</span>
+              </div>
+              <div class="payment-check">✓</div>
+            </div>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="visa">
+            <div class="payment-card">
+              <div class="payment-icon">💳</div>
+              <div class="payment-info">
+                <span class="payment-name" data-ar="فيزا / ماستركارد" data-en="Visa / Mastercard">فيزا / ماستركارد</span>
+                <span class="payment-desc" data-ar="الدفع بالبطاقة البنكية" data-en="Pay with bank card">الدفع بالبطاقة البنكية</span>
+              </div>
+              <div class="payment-check">✓</div>
+            </div>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="paypal">
+            <div class="payment-card">
+              <div class="payment-icon">🅿️</div>
+              <div class="payment-info">
+                <span class="payment-name" data-ar="باي بال" data-en="PayPal">باي بال</span>
+                <span class="payment-desc" data-ar="الدفع عبر حساب PayPal" data-en="Pay via PayPal account">الدفع عبر حساب PayPal</span>
+              </div>
+              <div class="payment-check">✓</div>
+            </div>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="wallet">
+            <div class="payment-card">
+              <div class="payment-icon">📱</div>
+              <div class="payment-info">
+                <span class="payment-name" data-ar="محفظة إلكترونية" data-en="E-Wallet">محفظة إلكترونية</span>
+                <span class="payment-desc" data-ar="فودافون كاش / أورنج كاش" data-en="Vodafone / Orange Cash">فودافون كاش / أورنج كاش</span>
+              </div>
+              <div class="payment-check">✓</div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="modal-save-btn" data-ar="💾 حفظ البيانات" data-en="💾 Save">💾 حفظ البيانات</button>
+    </form>
+  </div>
+</div>
+
+<!-- 💳 Modal الدفع -->
+<div class="payment-modal" id="paymentModal">
+  <div class="payment-overlay" id="paymentOverlay"></div>
+  <div class="payment-content">
+    <button class="payment-close" id="paymentClose">✕</button>
+    <div class="payment-header">
+      <div class="payment-header-icon">💳</div>
+      <h2 data-ar="إتمام الدفع" data-en="Complete Payment">إتمام الدفع</h2>
+      <p data-ar="أدخل بياناتك لإتمام الطلب" data-en="Enter your info to complete order">أدخل بياناتك لإتمام الطلب</p>
+    </div>
+
+    <div class="order-summary">
+      <div class="order-summary-row">
+        <span data-ar="المنتجات:" data-en="Items:">المنتجات:</span>
+        <span id="payItemsCount">0</span>
+      </div>
+      <div class="order-summary-row">
+        <span data-ar="الإجمالي الفرعي:" data-en="Subtotal:">الإجمالي الفرعي:</span>
+        <span id="paySubtotal">0 ج.م</span>
+      </div>
+      <div class="order-summary-row">
+        <span data-ar="الشحن:" data-en="Shipping:">الشحن:</span>
+        <span id="payShipping">50 ج.م</span>
+      </div>
+      <div class="order-summary-row order-summary-total">
+        <span data-ar="الإجمالي النهائي:" data-en="Grand Total:">الإجمالي النهائي:</span>
+        <span id="payTotalPrice">0 ج.م</span>
+      </div>
+    </div>
+
+    <div class="pay-method-info">
+      <span data-ar="طريقة الدفع:" data-en="Payment Method:">طريقة الدفع:</span>
+      <span id="payMethodName" class="pay-method-badge">💵 الدفع عند الاستلام</span>
+    </div>
+
+    <form id="paymentForm">
+      <div class="pay-form-group">
+        <label data-ar="الاسم" data-en="Name">الاسم</label>
+        <input type="text" id="payName" placeholder="الاسم الكامل" required>
+      </div>
+      <div class="pay-form-group">
+        <label data-ar="رقم الموبايل" data-en="Phone">رقم الموبايل</label>
+        <input type="tel" id="payPhone" placeholder="01xxxxxxxxx" required>
+      </div>
+      <div class="pay-form-group">
+        <label data-ar="العنوان" data-en="Address">العنوان</label>
+        <input type="text" id="payAddress" placeholder="العنوان بالتفصيل" required>
+      </div>
+
+      <!-- 💳 حقول الفيزا -->
+      <div id="cardFields" style="display:none">
+        <div class="pay-form-group">
+          <label data-ar="الاسم على الكارت" data-en="Name on Card">الاسم على الكارت</label>
+          <input type="text" id="cardHolder" placeholder="FATMA MOHAMED">
+        </div>
+        <div class="pay-form-group">
+          <label data-ar="رقم الكارت" data-en="Card Number">رقم الكارت</label>
+          <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+        </div>
+        <div class="pay-card-row">
+          <div class="pay-form-group">
+            <label data-ar="تاريخ الانتهاء" data-en="Expiry">تاريخ الانتهاء</label>
+            <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+          </div>
+          <div class="pay-form-group">
+            <label data-ar="CVV" data-en="CVV">CVV</label>
+            <input type="text" id="cardCvv" placeholder="123" maxlength="4">
+          </div>
+        </div>
+      </div>
+
+      <!-- 🅿️ حقول باي بال -->
+      <div id="paypalFields" style="display:none">
+        <div class="pay-form-group">
+          <label data-ar="إيميل باي بال" data-en="PayPal Email">إيميل باي بال</label>
+          <input type="email" id="paypalEmail" placeholder="example@email.com">
+        </div>
+      </div>
+
+      <!-- 📱 حقول المحفظة -->
+      <div id="walletFields" style="display:none">
+        <div class="pay-form-group">
+          <label data-ar="رقم المحفظة" data-en="Wallet Number">رقم المحفظة</label>
+          <input type="tel" id="walletNumber" placeholder="01xxxxxxxxx">
+        </div>
+      </div>
+
+      <button type="submit" class="pay-submit-btn" id="paySubmitBtn">
+        <span data-ar="🔒 ادفع الآن" data-en="🔒 Pay Now">🔒 ادفع الآن</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- 🎉 الإشعار -->
+<div class="toast" id="toast">
+  <div class="toast-icon">🎉</div>
+  <div class="toast-content">
+    <h4 id="toastTitle">تم بنجاح!</h4>
+    <p id="toastMessage">شكراً لك.</p>
+  </div>
+  <button class="toast-close" id="toastClose">✕</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
