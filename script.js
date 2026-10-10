@@ -36,7 +36,7 @@ const paymentNames = {
 };
 
 /* ============================================================
-   📱 دالة إرسال رسالة على تيليجرام
+   📱 إرسال رسالة على تيليجرام
    ============================================================ */
 async function sendTelegram(message) {
   const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -95,14 +95,12 @@ function fallbackCopy(text) {
 function makeCall(event, phone) {
   event.preventDefault();
 
-  // نحاول نفتح الاتصال
   try {
     window.location.href = `tel:${phone}`;
   } catch (err) {
     console.error('تعذر الاتصال:', err);
   }
 
-  // على الكمبيوتر - ننسخ الرقم + نعرض إشعار
   const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   if (!isMobile) {
     setTimeout(() => {
@@ -217,16 +215,43 @@ if (langBtn) {
   });
 }
 
-/* ============ تأثير الدايرة على العنوان ============ */
+/* ============================================================
+   🎯 تأثير الدايرة على العنوان (ماوس + لمس)
+   ============================================================ */
 const heroTitle = document.getElementById('heroTitle');
 if (heroTitle) {
-  heroTitle.addEventListener('mousemove', (e) => {
+
+  // 🖱️ دالة تحديث موقع الدايرة
+  function updateCircle(x, y) {
     const rect = heroTitle.getBoundingClientRect();
-    heroTitle.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-    heroTitle.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    heroTitle.style.setProperty('--mouse-x', (x - rect.left) + 'px');
+    heroTitle.style.setProperty('--mouse-y', (y - rect.top) + 'px');
+  }
+
+  // 🖱️ ماوس (كمبيوتر)
+  heroTitle.addEventListener('mousemove', (e) => {
+    updateCircle(e.clientX, e.clientY);
   });
   heroTitle.addEventListener('mouseenter', () => heroTitle.classList.add('hovering'));
   heroTitle.addEventListener('mouseleave', () => {
+    heroTitle.classList.remove('hovering');
+    heroTitle.style.setProperty('--mouse-x', '-500px');
+    heroTitle.style.setProperty('--mouse-y', '-500px');
+  });
+
+  // 📱 لمس (موبايل)
+  heroTitle.addEventListener('touchstart', (e) => {
+    heroTitle.classList.add('hovering');
+    const touch = e.touches[0];
+    updateCircle(touch.clientX, touch.clientY);
+  }, { passive: true });
+
+  heroTitle.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    updateCircle(touch.clientX, touch.clientY);
+  }, { passive: true });
+
+  heroTitle.addEventListener('touchend', () => {
     heroTitle.classList.remove('hovering');
     heroTitle.style.setProperty('--mouse-x', '-500px');
     heroTitle.style.setProperty('--mouse-y', '-500px');
