@@ -147,44 +147,66 @@ nav a:hover::after{transform:scaleX(1)}
 }
 .hero-text p{font-size:16px;color:var(--coffee);margin-bottom:24px}
 
-/* ===== العنوان (Hero Title) ===== */
+/* ============================================================
+   ✨ عنوان الهيرو — الدائرة والكلام متزامنين 100%
+   ============================================================ */
 .hero-title{
-  position:relative;display:inline-block;
-  font-size:48px;line-height:1.2;
-  margin-bottom:16px;cursor:default;
-  --mouse-x:-500px;--mouse-y:-500px;
+  position:relative;
+  display:inline-block;
+  font-size:48px;
+  line-height:1.2;
+  margin-bottom:16px;
+  cursor:default;
+  --mouse-x:-500px;
+  --mouse-y:-500px;
+  --mouse-size:0px;
   max-width:100%;
   -webkit-tap-highlight-color:transparent;
   touch-action:pan-y;
+  isolation:isolate;
 }
-.title-layer{display:block}
-.title-base{color:var(--coffee)}
 
-/* الكلام الفاتح بنفس مقاس الدايرة بالظبط */
+/* نخفي الطبقة القديمة */
 .title-reveal{
-  position:absolute;inset:0;
-  color:#ebdbba;
-  pointer-events:none;user-select:none;z-index:2;
-  clip-path:circle(0px at var(--mouse-x) var(--mouse-y));
-  transition:clip-path .15s ease-out;
+  display:none !important;
 }
 
-/* الدايرة البنية — حجمها ثابت 84px (نفس نصف قطر clip-path) */
+/* الطبقة الأساسية — gradient بـ clip على النص */
+.title-base{
+  display:block;
+  color:var(--coffee);
+  background-image:radial-gradient(
+    circle var(--mouse-size) at var(--mouse-x) var(--mouse-y),
+    #ebdbba 0%,
+    #ebdbba 100%,
+    var(--coffee) 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* الدائرة البنية اللي بتظهر ورا النص */
 .hero-title::before{
   content:"";
   position:absolute;
-  width:84px;height:84px;border-radius:50%;
-  left:var(--mouse-x);top:var(--mouse-y);
+  width:84px;
+  height:84px;
+  border-radius:50%;
+  left:var(--mouse-x);
+  top:var(--mouse-y);
   transform:translate(-50%,-50%);
-  background:#241810;pointer-events:none;
+  background:#241810;
   opacity:0;
-  transition:opacity .15s ease-out;
-  z-index:1;
-  box-shadow:0 0 1px 1px rgba(36,24,16,.5);
+  z-index:-1;
+  pointer-events:none;
 }
-.hero-title.hovering::before{opacity:1}
-.hero-title.hovering .title-reveal{
-  clip-path:circle(42px at var(--mouse-x) var(--mouse-y));
+
+.hero-title.hovering::before{
+  opacity:1;
+}
+.hero-title.hovering{
+  --mouse-size:42px;
 }
 
 .hero-image{
@@ -1019,23 +1041,21 @@ footer{
   /* 🎯 العنوان على الموبايل */
   .hero-title{
     font-size:32px;
-    line-height:1.45;
+    line-height:1.35;
     padding:6px 0;
     max-width:100%;
   }
-  .hero-title .title-layer{
+  .hero-title .title-base{
     white-space:normal;
     overflow-wrap:break-word;
     max-width:100%;
   }
-
-  /* 🎯 الدايرة على الموبايل — نفس مقاس clip-path */
   .hero-title::before{
-    display:block;
-    width:70px;height:70px;
+    width:60px;
+    height:60px;
   }
-  .hero-title.hovering .title-reveal{
-    clip-path:circle(35px at var(--mouse-x) var(--mouse-y));
+  .hero-title.hovering{
+    --mouse-size:30px;
   }
 
   .hero-text p{font-size:14px;padding:0 4px}
@@ -1149,11 +1169,9 @@ footer{
 
 /* 📱 موبايلات صغيرة جدًا */
 @media(max-width:480px){
-  .hero-title{font-size:26px;line-height:1.5}
-  .hero-title::before{width:62px;height:62px}
-  .hero-title.hovering .title-reveal{
-    clip-path:circle(31px at var(--mouse-x) var(--mouse-y));
-  }
+  .hero-title{font-size:26px}
+  .hero-title::before{width:52px;height:52px}
+  .hero-title.hovering{--mouse-size:26px;}
   .hero-image{aspect-ratio:1/1}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .product-img{width:85px;height:85px;font-size:36px}
